@@ -1,6 +1,6 @@
 {
   "name": "@sefinek/random-animals",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "The best npm module for fetching random animal images, such as cats, foxes, dogs, and many more! All powered by a fast API!",
   "keywords": [
     "alpaca",

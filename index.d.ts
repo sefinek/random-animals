@@ -54,12 +54,6 @@ declare module '@sefinek/random-animals' {
     export const apiVersion: () => Promise<string>;
 
     /**
-     * Get the CDN version from the external CDN.
-     * @returns {Promise<string>} - A promise that resolves with the CDN version or rejects with an error.
-     */
-    export const cdnVersion: () => Promise<string>;
-
-    /**
      * Get module version.
      * @returns {string} - Returns this package version.
      */
