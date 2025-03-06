@@ -22,13 +22,13 @@
     "random",
     "random-animals"
   ],
-  "homepage": "https://github.com/sefinek24/random-animals#readme",
+  "homepage": "https://github.com/sefinek/random-animals#readme",
   "bugs": {
-    "url": "https://github.com/sefinek24/random-animals/issues"
+    "url": "https://github.com/sefinek/random-animals/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sefinek24/random-animals.git"
+    "url": "git+https://github.com/sefinek/random-animals.git"
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",

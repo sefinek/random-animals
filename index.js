@@ -6,12 +6,12 @@ const API_URL = 'https://api.sefinek.net';
 
 // Define common HTTP request headers
 const headers = {
-	'User-Agent': `random-animals/${version} (+https://github.com/sefinek24/random-animals) ${process.env.JEST_WORKER_ID ? `jest/${devDependencies.jest.replace('^', '')}` : ''}`,
+	'User-Agent': `random-animals/${version} (+https://github.com/sefinek/random-animals) ${process.env.JEST_WORKER_ID ? `jest/${devDependencies.jest.replace('^', '')}` : ''}`,
 	'Accept': 'application/json',
 	'Content-Type': 'application/json',
 	'Cache-Control': 'no-cache',
 	'Connection': 'keep-alive',
-	'DNT': '1'
+	'DNT': '1',
 };
 
 /**
@@ -19,20 +19,18 @@ const headers = {
  * @param {string} url - The URL to make the request to.
  * @returns {Promise} - A promise that resolves with the response data or rejects with an error.
  */
-const makeRequest = url => {
-	return new Promise((resolve, reject) => {
-		const req = https.get(url, { headers }, res => {
-			let data = '';
-			res.on('data', chunk => data += chunk);
-			res.on('end', () => {
-				res.statusCode === 200 ? resolve(JSON.parse(data)) : reject(new Error(`Request failed with status code ${res.statusCode}`));
-			});
+const makeRequest = url => new Promise((resolve, reject) => {
+	const req = https.get(url, { headers }, res => {
+		let data = '';
+		res.on('data', chunk => data += chunk);
+		res.on('end', () => {
+			res.statusCode === 200 ? resolve(JSON.parse(data)) : reject(new Error(`Request failed with status code ${res.statusCode}`));
 		});
-
-		req.on('error', reject);
-		req.end();
 	});
-};
+
+	req.on('error', reject);
+	req.end();
+});
 
 /**
  * Get random animal data based on the specified endpoint.
@@ -51,6 +49,5 @@ module.exports = {
 	bird: () => getData('bird'),
 
 	apiVersion: () => makeRequest(`${API_URL}/api`).then(jsonData => jsonData.version),
-	cdnVersion: () => makeRequest('https://cdn.sefinek.net').then(jsonData => jsonData.message),
-	version
+	version,
 };

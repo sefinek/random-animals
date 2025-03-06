@@ -47,9 +47,3 @@ test('Get API version', async () => {
 		expect(typeof data).toBe('string');
 	});
 });
-
-test('Check CDN version', async () => {
-	await random.cdnVersion().then(data => {
-		expect(typeof data).toBe('string');
-	});
-});
