@@ -35,8 +35,8 @@
   "main": "index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "test": "jest test",
-    "up": "ncu -u && npm install && npm update && npm audit fix"
+    "m": "ncu -u && npm install && npm update",
+    "test": "jest test"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
