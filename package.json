@@ -1,6 +1,6 @@
 {
   "name": "@sefinek/random-animals",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "The best npm module for fetching random animal images, such as cats, foxes, dogs, and many more! All powered by a fast API!",
   "keywords": [
     "alpaca",
@@ -32,15 +32,29 @@
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "commonjs",
   "main": "index.js",
   "types": "./index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "example.js",
+    "index.d.ts",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "m": "ncu -u && npm install && npm update",
     "test": "jest test"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "globals": "^16.0.0",
-    "jest": "^29.7.0"
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.7.0",
+    "jest": "^30.4.2"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
   }
 }
