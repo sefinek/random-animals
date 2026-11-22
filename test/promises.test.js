@@ -1,49 +1,51 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
 const random = require('../index.js');
 const { version } = require('../package.json');
 
 test('Random cats', async () => {
 	await random.cat().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 test('Random dogs', async () => {
 	await random.dog().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 test('Random foxes', async () => {
 	await random.fox().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 test('Random fishes', async () => {
 	await random.fish().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 test('Random alpacas', async () => {
 	await random.alpaca().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 test('Random birds', async () => {
 	await random.bird().then(data => {
-		expect(data.success).toBe(true);
+		assert.equal(data.success, true);
 	});
 });
 
 
 test('Get module version', () => {
-	expect(random.version).toBe(version);
+	assert.equal(random.version, version);
 });
 
 test('Get API version', async () => {
 	await random.apiVersion().then(data => {
-		expect(typeof data).toBe('string');
+		assert.equal(typeof data, 'string');
 	});
 });
