@@ -1,12 +1,12 @@
 const https = require('node:https');
-const { version } = require('./package.json');
+const { version, homepage } = require('./package.json');
 
 // Define the base URL for the external API
 const API_URL = 'https://api.sefinek.net';
 
 // Define common HTTP request headers
 const headers = {
-	'User-Agent': `random-animals/${version} (+https://github.com/sefinek/random-animals) ${process.env.NODE_TEST_CONTEXT ? `node-test/${process.versions.node}` : ''}`,
+	'User-Agent': `random-animals/${version} (+${homepage}) ${process.env.NODE_TEST_CONTEXT ? `node-test/${process.versions.node}` : ''}`,
 };
 
 /**
